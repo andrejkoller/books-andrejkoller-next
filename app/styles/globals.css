@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  --background: rgb(255, 255, 255);
+  --foreground: rgb(0, 0, 0);
+
+  --text-muted: rgba(0, 0, 0, 0.2);
+  --text-primary: rgba(0, 0, 0, 1);
+  --text-hover: rgba(0, 0, 0, 0.65);
+
+  --bg-primary: rgba(0, 0, 0, 0.04);
+
+  --overlay: rgba(255, 255, 255, 0.5);
+
+  --border: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --background: rgb(0, 0, 0);
+  --foreground: rgb(255, 255, 255);
+
+  --text-muted: rgba(255, 255, 255, 0.2);
+  --text-primary: rgba(255, 255, 255, 1);
+  --text-hover: rgba(255, 255, 255, 0.65);
+
+  --bg-primary: rgba(255, 255, 255, 0.04);
+
+  --overlay: rgba(0, 0, 0, 0.5);
+
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-text-muted: var(--text-muted);
+  --color-text-primary: var(--text-primary);
+  --color-text-hover: var(--text-hover);
+  --color-bg-primary: var(--bg-primary);
+  --color-overlay: var(--overlay);
+  --color-border: var(--border);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
